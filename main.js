@@ -1,15 +1,18 @@
 import { getCubePositions } from './cube.js'
+import { getSquarePositions } from './shapes/square.js'
 import { initShaderProgram } from './shader-program.js'
+import { drawScene } from './draw-scene.js'
 
 main();
 
 function main() {
     const gl = getWebGL()
-    gl.clearColor(196.0/255.0, 221.0/255.0, 1, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     const shaderProgram = initShaderProgram(gl)
     const programInfo = getProgramInfo(gl, shaderProgram)
+    const buffers = initBuffers(gl)
+    drawScene(gl, programInfo, buffers)
 
     const cubePositions = getCubePositions()
 }
@@ -36,3 +39,18 @@ function getProgramInfo(gl, shaderProgram) {
         },
     }
 }
+
+function initBuffers(gl) {
+    const positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+
+    // Now create an array of positions for the square.
+    const positions = getSquarePositions()
+    gl.bufferData(gl.ARRAY_BUFFER,
+                    new Float32Array(positions),
+                    gl.STATIC_DRAW);
+    return {
+        position: positionBuffer,
+    };
+}
+  
