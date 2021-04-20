@@ -1,3 +1,4 @@
+import { getCubePositions } from './cube.js'
 
 function getWebGL() {
     const canvas = document.querySelector('#glcanvas');
@@ -13,6 +14,8 @@ function main() {
     const gl = getWebGL()
     gl.clearColor(196.0/255.0, 221.0/255.0, 1, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
+
+    const cubePositions = getCubePositions()
 }
 
 main();
