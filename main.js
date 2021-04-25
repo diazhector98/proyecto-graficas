@@ -25,12 +25,32 @@ function main() {
     const board = createInstance(scene, boardGeometry, white, 0,0, -4)
 
     // Special Cards
-    const specialCardsGeometry = getBoxGeometry(.60,0.15,1);
+    const specialCardsGeometry = getBoxGeometry(.60,0.15,.70);
     const specialCards = createInstance(scene, specialCardsGeometry, blue, -1,0, -3)
 
     // Chance Cards
-    const chanceCardsGeometry = getBoxGeometry(.60, 0.15, 1);
+    const chanceCardsGeometry = getBoxGeometry(.60, 0.15, .70);
     const chanceCards = createInstance(scene, chanceCardsGeometry, orange, 0, 0, -3)
+
+    // $1
+    const billete1Geometry = getBoxGeometry(1, 0.15, .60);
+    const billete1 = createInstance(scene, billete1Geometry, white, 2.8, 1, -4)
+
+    // $5
+    const billete5Geometry = getBoxGeometry(1, 0.15, .60);
+    const billete5 = createInstance(scene, billete5Geometry, white, 2.8, 1.2, -4)
+
+
+    // $10
+
+
+    // $20
+
+
+    // $50
+
+
+    // $100
 
     // Dices
     const diceGeometry = getBoxGeometry(0.2,0.2,0.2)
