@@ -2,6 +2,7 @@ import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threej
 import { camera } from './camera.js'
 import { light } from './light.js'
 import { getBoxGeometry, createInstance } from './box.js'
+import { createBoard } from './board.js'
 
 function main() {
     // Setup
@@ -21,8 +22,7 @@ function main() {
     const orange = 0xFFA500
 
     // Board
-    const boardGeometry = getBoxGeometry(5,0.1,5);
-    const board = createInstance(scene, boardGeometry, white, 0,0, -4)
+    createBoard()
 
     // Special Cards
     const specialCardsGeometry = getBoxGeometry(.60,0.15,.70);
