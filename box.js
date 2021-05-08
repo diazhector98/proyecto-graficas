@@ -5,8 +5,8 @@ export const getBoxGeometry = (width, height, depth) => {
     return geometry
 }
 
-export const createInstance = (scene, geometry, color, x, y, z) => {
-    const material = new THREE.MeshPhongMaterial({color});
+export const createInstance = (scene, geometry, material, x, y, z) => {
+    console.log({ material })
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
    

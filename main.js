@@ -22,23 +22,27 @@ function main() {
     const orange = 0xFFA500
 
     // Board
-    createBoard()
+    createBoard(scene)
 
     // Special Cards
+    const scMaterial = new THREE.MeshPhongMaterial({color: blue})
     const specialCardsGeometry = getBoxGeometry(.60,0.15,.70);
-    const specialCards = createInstance(scene, specialCardsGeometry, blue, -1,0, -3)
+    const specialCards = createInstance(scene, specialCardsGeometry, scMaterial, -1,0, -3)
 
     // Chance Cards
+    const ccMaterial = new THREE.MeshPhongMaterial({color: orange})
     const chanceCardsGeometry = getBoxGeometry(.60, 0.15, .70);
-    const chanceCards = createInstance(scene, chanceCardsGeometry, orange, 0, 0, -3)
+    const chanceCards = createInstance(scene, chanceCardsGeometry, ccMaterial, 0, 0, -3)
 
     // $1
+    const b1Material = new THREE.MeshPhongMaterial({color: white})
     const billete1Geometry = getBoxGeometry(1, 0.15, .60);
-    const billete1 = createInstance(scene, billete1Geometry, white, 2.8, 1, -4)
+    const billete1 = createInstance(scene, billete1Geometry, b1Material, 2.8, 1, -4)
 
     // $5
+    const b2Material = new THREE.MeshPhongMaterial({color: white})
     const billete5Geometry = getBoxGeometry(1, 0.15, .60);
-    const billete5 = createInstance(scene, billete5Geometry, white, 2.8, 1.2, -4)
+    const billete5 = createInstance(scene, billete5Geometry, b2Material, 2.8, 1.2, -4)
 
 
     // $10
@@ -53,9 +57,10 @@ function main() {
     // $100
 
     // Dices
+    const diceMaterial = new THREE.MeshPhongMaterial({color: white})
     const diceGeometry = getBoxGeometry(0.2,0.2,0.2)
-    const dice1 = createInstance(scene, diceGeometry, green, 1,1, -3)
-    const dice2 = createInstance(scene, diceGeometry, green, 1.3,1, -3)
+    const dice1 = createInstance(scene, diceGeometry, diceMaterial, 1,1, -3)
+    const dice2 = createInstance(scene, diceGeometry, diceMaterial, 1.3,1, -3)
 
 
 
