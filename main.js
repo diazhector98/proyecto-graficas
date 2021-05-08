@@ -4,6 +4,7 @@ import { light } from './light.js'
 import { getBoxGeometry, createInstance } from './box.js'
 import { createBoard } from './board.js'
 import { createMoney } from './money.js'
+import { createDice } from './dice.js'
 
 function main() {
     // Setup
@@ -40,11 +41,7 @@ function main() {
     createMoney(scene)
 
     // Dices
-    const diceMaterial = new THREE.MeshPhongMaterial({color: white})
-    const diceGeometry = getBoxGeometry(0.2,0.2,0.2)
-    const dice1 = createInstance(scene, diceGeometry, diceMaterial, 1,1, -3)
-    const dice2 = createInstance(scene, diceGeometry, diceMaterial, 1.3,1, -3)
-
+    createDice(scene)
 
 
     camera.position.z = 4;
