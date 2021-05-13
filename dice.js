@@ -45,11 +45,9 @@ const createDiceMaterials = () => {
 }
 
 export const createDice = (scene) => {
-    const white = 0xffffff
-
     const dice1Materials = createDiceMaterials()
     const dice2Materials = createDiceMaterials()
     const diceGeometry = getBoxGeometry(0.2,0.2,0.2)
-    const dice1 = createInstance(scene, diceGeometry, dice1Materials, 1,1, -3)
-    const dice2 = createInstance(scene, diceGeometry, dice2Materials, 1.3,1, -3)
+    const dice1 = createInstance(scene, diceGeometry, dice1Materials, 1,-0.37, -3)
+    const dice2 = createInstance(scene, diceGeometry, dice2Materials, 2,-0.37, -3)
 }

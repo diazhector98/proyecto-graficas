@@ -32,12 +32,12 @@ function main() {
     // Special Cards
     const scMaterial = new THREE.MeshPhongMaterial({color: blue})
     const specialCardsGeometry = getBoxGeometry(.60,0.15,.70);
-    const specialCards = createInstance(scene, specialCardsGeometry, scMaterial, -1,0, -3)
+    const specialCards = createInstance(scene, specialCardsGeometry, scMaterial, -1,-0.37, -3)
 
     // Chance Cards
     const ccMaterial = new THREE.MeshPhongMaterial({color: orange})
     const chanceCardsGeometry = getBoxGeometry(.60, 0.15, .70);
-    const chanceCards = createInstance(scene, chanceCardsGeometry, ccMaterial, 0, 0, -3)
+    const chanceCards = createInstance(scene, chanceCardsGeometry, ccMaterial, 0, -0.37, -3)
 
     // Money
     createMoney(scene)
