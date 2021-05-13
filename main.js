@@ -5,6 +5,7 @@ import { getBoxGeometry, createInstance } from './box.js'
 import { createBoard } from './board.js'
 import { createMoney } from './money.js'
 import { createDice } from './dice.js'
+import { createHouse } from './house.js'
 
 function main() {
     // Setup
@@ -42,6 +43,9 @@ function main() {
 
     // Dices
     createDice(scene)
+
+    // House
+    createHouse(scene)
 
 
     camera.position.z = 4;
