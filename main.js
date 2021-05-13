@@ -1,4 +1,5 @@
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
+import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/controls/OrbitControls.js';
 import { camera } from './camera.js'
 import { light } from './light.js'
 import { getBoxGeometry, createInstance } from './box.js'
@@ -47,13 +48,17 @@ function main() {
     // House
     createHouse(scene)
 
-
     camera.position.z = 4;
     camera.position.y = 2;
     camera.rotation.x = -0.3;
 
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 0, 0);
+    controls.update();
+
     const animate = function () {
         requestAnimationFrame( animate );
+        controls.update();
         renderer.render( scene, camera );
     };
     animate();
