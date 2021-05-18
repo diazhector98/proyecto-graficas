@@ -8,6 +8,23 @@ import { createMoney } from './money.js'
 import { createDice } from './dice.js'
 import { createHouse } from './house.js'
 
+const createCardsMaterials = (texture, color) => {
+    const topMaterial = new THREE.MeshBasicMaterial({
+        map: texture
+    })
+
+    const materials = [
+        new THREE.MeshPhongMaterial({color}),
+        new THREE.MeshPhongMaterial({color}),
+        topMaterial,
+        new THREE.MeshPhongMaterial({color}),
+        new THREE.MeshPhongMaterial({color}),
+        new THREE.MeshPhongMaterial({color}),
+    ]
+
+    return materials
+}
+
 function main() {
     // Setup
     const scene = new THREE.Scene();
@@ -30,14 +47,18 @@ function main() {
     createBoard(scene)
 
     // Special Cards
-    const scMaterial = new THREE.MeshPhongMaterial({color: blue})
-    const specialCardsGeometry = getBoxGeometry(.60,0.15,.70);
-    const specialCards = createInstance(scene, specialCardsGeometry, scMaterial, -1,-0.37, -3)
+    const scTexture = loader.load('assets/community.jpg')
+    const scColor = 0x0000FF
+    const scMaterials = createCardsMaterials(scTexture, scColor)
+    const specialCardsGeometry = getBoxGeometry(.60,0.15,.90);
+    const specialCards = createInstance(scene, specialCardsGeometry, scMaterials, -1,-0.37, -3)
 
     // Chance Cards
-    const ccMaterial = new THREE.MeshPhongMaterial({color: orange})
-    const chanceCardsGeometry = getBoxGeometry(.60, 0.15, .70);
-    const chanceCards = createInstance(scene, chanceCardsGeometry, ccMaterial, 0, -0.37, -3)
+    const chanceTexture = loader.load('assets/chance.jpg')
+    const chanceColor = 0xFFA500
+    const chanceMaterials = createCardsMaterials(chanceTexture, chanceColor)
+    const chanceCardsGeometry = getBoxGeometry(.60, 0.15, .90);
+    const chanceCards = createInstance(scene, chanceCardsGeometry, chanceMaterials, 0, -0.37, -3)
 
     //player piece 1
     const ppMaterial = new THREE.MeshPhongMaterial({color: green})
