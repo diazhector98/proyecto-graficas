@@ -6,10 +6,10 @@ La forma más fácil que utilizamos es
 1. Instalar globalmente el paquete de npm de static server
 
 ```
-npm -g install static-server
+npm install live-server -g
 ```
 
 2. Ir al folder del proyecto y correr en la terminal:
 ```
-static-server
+live-server
 ```
