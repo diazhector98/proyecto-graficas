@@ -1,3 +1,6 @@
+// Hector Diaz, Jesús Lozano, Adrián Hinojosa, 
+// This file uses ThreeJS in order to add the perspective camera.
+
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
 
 const fov = 75;

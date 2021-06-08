@@ -1,3 +1,6 @@
+// Hector Diaz, Jesús Lozano, Adrián Hinojosa, 
+// This file adds the money and it's functinos to the game.
+
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
 import { getBoxGeometry, createInstance } from './box.js'
 

@@ -1,3 +1,5 @@
+// Hector Diaz, Jesús Lozano, Adrián Hinojosa, 
+// This file helps use threeJS and corresponding resources. We add the box geometry and create the scene with the initial X and Y positions.
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
 
 export const getBoxGeometry = (width, height, depth) => {

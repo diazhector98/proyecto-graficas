@@ -1,5 +1,7 @@
 # Proyecto de Gráficas Computacionales
 
+# Creado Por Hector Díaz, Jesús Lozano y Adrián Hinojosa
+
 ![ImagenDelProyecto](https://i.imgur.com/ZDzg9J0.png)
 
 - [x] Objetos 3D

@@ -1,3 +1,5 @@
+ // Hector Diaz, Jesús Lozano, Adrián Hinojosa, 
+// This is the main file which loads images and imports base components that will be used for the game's setup.
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
 import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/controls/OrbitControls.js';
 import { camera } from './camera.js'

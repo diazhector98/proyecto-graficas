@@ -1,3 +1,5 @@
+// Hector Diaz, Jesús Lozano, Adrián Hinojosa, 
+// This file adds the base house to the scene.
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/build/three.module.js';
 import { getBoxGeometry, createInstance } from './box.js'
 
