@@ -61,24 +61,29 @@ function main() {
     const chanceCards = createInstance(scene, chanceCardsGeometry, chanceMaterials, 0, -0.37, -3)
 
     //player piece 1
+    let playerPiecePositionX = 2;
     const ppMaterial = new THREE.MeshPhongMaterial({color: green})
     const ppGeometry = getBoxGeometry(.15, .4, .15);
-    const playerPiece = createInstance(scene, ppGeometry, ppMaterial, 2, -.96, -1.9)
+    const playerPiece = createInstance(scene, ppGeometry, ppMaterial, playerPiecePositionX, -0.96, -1.9)
 
     //player piece 2
+    let playerPiece1PositionX = 2.3
     const pp1Material = new THREE.MeshPhongMaterial({color: blue})
     const pp1Geometry = getBoxGeometry(.15, .4, .15);
-    const playerPiece1 = createInstance(scene, pp1Geometry, pp1Material, 2.3, -.8, -2.15)
+    const playerPiece1 = createInstance(scene, pp1Geometry, pp1Material, playerPiece1PositionX, -.8, -2.15)
     
+
     //player piece 3
+    let playerPiece2PositionX = 2;
     const pp2Material = new THREE.MeshPhongMaterial({color: white})
     const pp2Geometry = getBoxGeometry(.15, .4, .15);
-    const playerPiece2 = createInstance(scene, pp2Geometry, pp2Material, 2, -.8, -2.15)
+    const playerPiece2 = createInstance(scene, pp2Geometry, pp2Material, playerPiece2PositionX, -.8, -2.15)
 
     //player piece 4
+    let playerPiece3PositionX = 2.3;
     const pp3Material = new THREE.MeshPhongMaterial({color: orange})
     const pp3Geometry = getBoxGeometry(.15, .4, .15);
-    const playerPiece3 = createInstance(scene, pp3Geometry, pp3Material, 2.3, -.96, -1.9)
+    const playerPiece3 = createInstance(scene, pp3Geometry, pp3Material, playerPiece3PositionX, -.96, -1.9)
 
     // Money
     createMoney(scene)
@@ -98,6 +103,27 @@ function main() {
     controls.update();
 
     const animate = function () {
+        if (playerPiecePositionX > -2.20) {
+            playerPiecePositionX -= 0.01
+        } else {
+            if (playerPiece1PositionX > -0.45) {
+                playerPiece1PositionX -= 0.01
+            } else {
+                if (playerPiece2PositionX > 0) {
+                    playerPiece2PositionX -= 0.01
+                } else {
+                    if (playerPiece3PositionX > 0.9) {
+                        playerPiece3PositionX -= 0.01
+                    }
+                }
+            }
+        }
+        playerPiece.position.x = playerPiecePositionX
+        playerPiece1.position.x = playerPiece1PositionX
+        playerPiece2.position.x = playerPiece2PositionX
+        playerPiece3.position.x = playerPiece3PositionX
+
+        console.log({ playerPiecePositionX })
         requestAnimationFrame( animate );
         controls.update();
         renderer.render( scene, camera );
